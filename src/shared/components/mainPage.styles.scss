@@ -1,0 +1,73 @@
+@import "variables";
+//Shared
+
+//Main Page file
+
+.main-div {
+  width: 720px;
+  height: 100%;
+  border: 1px solid $primary;
+  margin: 0 auto;
+}
+
+//Header file
+
+.menubar {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0;
+  border: 0;
+  height: 80px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.nav-link {
+  color: $secondary;
+}
+
+.reservar-button {
+  background-color: $primary;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: $primary-hover;
+  }
+}
+
+//Information file
+.main-title-div {
+  font-size: 60px;
+  text-align: center;
+  font-weight: 500;
+  color: $primary;
+  margin-bottom: 40px;
+  border-bottom: 0.5px;
+
+  span {
+    position: relative;
+    color: white;
+    border-radius: 30px;
+    background-color: $primary;
+  }
+}
+
+.information {
+  padding-right: 60px;
+  padding-left: 60px;
+  padding-bottom: 40px;
+  text-align: center;
+  p {
+    margin-bottom: 40px;
+    span {
+      color: $primary;
+      font-weight: bold;
+    }
+  }
+}
+.disclaimer {
+  font-weight: bold;
+  border: 1.5px solid $primary;
+  border-radius: 10px;
+  padding: 5px;
+}
