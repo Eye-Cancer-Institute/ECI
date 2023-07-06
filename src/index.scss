@@ -75,6 +75,7 @@
 @layer base {
   * {
     @apply border-border;
+    font-family: "sofia-pro", sans-serif;
   }
   body {
     @apply bg-background text-foreground;

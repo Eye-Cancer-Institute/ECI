@@ -8,7 +8,7 @@ import {
 const Header = () => {
   return (
     <Menubar className="menubar">
-      <div className="flex">
+      <div className="nav-links-div">
         <MenubarMenu>
           <MenubarTrigger className="nav-link">Nosotros</MenubarTrigger>
         </MenubarMenu>
@@ -22,7 +22,7 @@ const Header = () => {
           <MenubarTrigger className="nav-link">Contacto</MenubarTrigger>
         </MenubarMenu>
       </div>
-      <img src="/shared/images/logo.png" alt="Logo" />
+      <img src="/shared/images/logo.svg" alt="Logo" />
       <div>
         <Button className="reservar-button">Reservar una cita</Button>
       </div>

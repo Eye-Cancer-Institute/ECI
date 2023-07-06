@@ -10,7 +10,7 @@ const Information = () => {
       </div>
 
       <p className="descripcion">
-        <span>Descripción Técnica</span> Lorem ipsum dolor sit amet consectetur
+        <span>Descripción Técnica:</span> Lorem ipsum dolor sit amet consectetur
         adipisicing elit. Provident similique rem fuga maxime quasi perspiciatis
         atque nihil omnis dolore suscipit non eius quidem eligendi, veniam error
         id dignissimos ab necessitatibus.
