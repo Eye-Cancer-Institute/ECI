@@ -5,8 +5,7 @@
 
 .main-div {
   width: 720px;
-  height: 100%;
-  border: 1px solid $primary;
+  // border: 1px solid $primary;
   margin: 0 auto;
 }
 
@@ -22,12 +21,20 @@
   margin-right: 10px;
 }
 
+.nav-links-div {
+  display: flex;
+  justify-content: start;
+}
+
 .nav-link {
   color: $secondary;
+  font-weight: 400;
+  padding: 5px;
 }
 
 .reservar-button {
   background-color: $primary;
+  color: white;
   border-radius: 5px;
 
   &:hover {
@@ -41,20 +48,22 @@
   text-align: center;
   font-weight: 500;
   color: $primary;
-  margin-bottom: 40px;
-  border-bottom: 0.5px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 60px;
+  border-bottom: 1px solid $primary;
 
   span {
     position: relative;
     color: white;
-    border-radius: 30px;
+    border-radius: 300px;
     background-color: $primary;
   }
 }
 
 .information {
-  padding-right: 60px;
-  padding-left: 60px;
+  padding-right: 40px;
+  padding-left: 40px;
   padding-bottom: 40px;
   text-align: center;
   p {
@@ -70,4 +79,29 @@
   border: 1.5px solid $primary;
   border-radius: 10px;
   padding: 5px;
+}
+
+//Footer file
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $secondary;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  div {
+    margin-bottom: 20px;
+  }
+  p,
+  button {
+    color: white;
+  }
+  button {
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 5px;
+    &:hover {
+      background-color: #f89e4c;
+    }
+  }
 }
