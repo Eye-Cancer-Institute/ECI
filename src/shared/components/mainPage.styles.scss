@@ -5,15 +5,16 @@
 
 .main-div {
   width: 720px;
-  // border: 1px solid $primary;
+  border: 1px solid $primary;
   margin: 0 auto;
 }
 
 //Header file
 
-.menubar {
+.navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-radius: 0;
   border: 0;
   height: 80px;
@@ -30,6 +31,7 @@
   color: $secondary;
   font-weight: 400;
   padding: 5px;
+  font-size: 0.875rem;
 }
 
 .reservar-button {
