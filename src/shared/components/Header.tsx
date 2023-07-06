@@ -1,32 +1,40 @@
 import { Button } from "shadcn/components/ui/button";
-import {
-  Menubar,
-  MenubarMenu,
-  MenubarTrigger,
-} from "shadcn/components/ui/menubar";
 
 const Header = () => {
   return (
-    <Menubar className="menubar">
+    <div className="navbar">
       <div className="nav-links-div">
-        <MenubarMenu>
-          <MenubarTrigger className="nav-link">Nosotros</MenubarTrigger>
-        </MenubarMenu>
-        <MenubarMenu>
-          <MenubarTrigger className="nav-link">Servicios</MenubarTrigger>
-        </MenubarMenu>
-        <MenubarMenu>
-          <MenubarTrigger className="nav-link">Blog</MenubarTrigger>
-        </MenubarMenu>
-        <MenubarMenu>
-          <MenubarTrigger className="nav-link">Contacto</MenubarTrigger>
-        </MenubarMenu>
+        <a
+          className="nav-link"
+          href="https://www.eyecancerinstitute.com/nosotros"
+        >
+          Nosotros
+        </a>
+        <a
+          className="nav-link"
+          href="https://www.eyecancerinstitute.com/servicios"
+        >
+          Servicios
+        </a>
+        <a className="nav-link" href="https://www.eyecancerinstitute.com/blog">
+          Blog
+        </a>
+        <a
+          className="nav-link"
+          href="https://www.eyecancerinstitute.com/contacto"
+        >
+          Contacto
+        </a>
       </div>
-      <img src="/shared/images/logo.svg" alt="Logo" />
+      <a href="https://www.eyecancerinstitute.com/">
+        <img src="/shared/images/logo.svg" alt="Logo" />
+      </a>
       <div>
-        <Button className="reservar-button">Reservar una cita</Button>
+        <a href="https://wa.me/528128608714">
+          <Button className="reservar-button">Reservar una cita</Button>
+        </a>
       </div>
-    </Menubar>
+    </div>
   );
 };
 

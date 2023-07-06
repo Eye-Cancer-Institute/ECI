@@ -14,9 +14,12 @@ const Footer = () => {
         <Button>¡Contáctanos!</Button>
       </div>
       <div className="flex flex-col items-center text-xs">
-        <p className="!text-primary border-b border-primary mb-1">
+        <a
+          href="https://www.eyecancerinstitute.com/aviso-de-privacidad"
+          className="!text-primary border-b border-primary mb-1"
+        >
           Aviso de privacidad
-        </p>
+        </a>
         <p>Fundación Ovularis S.C. </p>
       </div>
     </div>
