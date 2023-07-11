@@ -94,7 +94,7 @@
 //Cuestionario file
 .cuestionario-div {
   background-color: $tertiary;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   table {
     width: 638px;
     margin: 0 auto;
@@ -113,6 +113,7 @@
   td {
     font-weight: 600;
     padding: 10px;
+    color: $secondary;
 
     //Styles for table border radius
     border-style: none solid solid none;
@@ -135,10 +136,7 @@
   .no-label {
     margin-right: 5px;
     cursor: pointer;
-  }
-
-  .si-checkbox {
-    // margin-right: 15px;
+    color: $secondary;
   }
 
   .no-label {
@@ -178,6 +176,63 @@
     border-bottom: 2px solid $primary;
   }
   //End of styles for table border radius
+}
+
+//Resultados file
+.resultados-div {
+  margin: 0 40px 80px 40px;
+  text-align: center;
+  h2 {
+    color: $secondary;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  span {
+    color: $primary;
+  }
+}
+
+.bar {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  border: solid 2px $primary;
+  border-radius: 10px;
+  .inside-bar {
+    // position: relative; you got to figure out how an element with absolute can be relative to the bar not inside bar (refering to the 100%
+
+    height: 100%;
+    width: 66%;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: $primary;
+  }
+  p {
+    position: absolute;
+    top: 5px;
+    font-weight: bold;
+  }
+  .zero {
+    left: 10px;
+  }
+  .hundred {
+    right: 10px;
+  }
+}
+
+.information-result {
+  margin-top: 100px;
+}
+
+.percentage {
+  position: absolute;
+  top: 100px;
+  left: 66%;
+  color: $primary;
+  font-weight: bold;
+  font-size: 44px;
 }
 
 //Footer file
