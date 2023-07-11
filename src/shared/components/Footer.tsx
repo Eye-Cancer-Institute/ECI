@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="">Iconos</div>
       <div>
         <p className="">
-          ¿Tienes algunda <span className="text-primary">duda</span>?
+          ¿Tienes alguna <span className="text-primary">duda</span>?
         </p>
       </div>
       <div>

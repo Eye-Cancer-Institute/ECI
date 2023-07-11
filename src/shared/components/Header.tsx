@@ -27,7 +27,7 @@ const Header = () => {
         </a>
       </div>
       <a href="https://www.eyecancerinstitute.com/">
-        <img src="/shared/images/logo.svg" alt="Logo" />
+        <img className="logo-img" src="/logo.png" alt="Logo" />
       </a>
       <div>
         <a href="https://wa.me/528128608714">
