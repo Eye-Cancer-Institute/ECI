@@ -108,7 +108,7 @@
 //Cuestionario file
 .cuestionario-div {
   background-color: $tertiary;
-  margin-bottom: 40px;
+  padding-bottom: 80px;
   table {
     width: 638px;
     margin: 0 auto;
@@ -194,7 +194,7 @@
 
 //Resultados file
 .resultados-div {
-  margin: 0 40px 80px 40px;
+  margin: 40px 40px 0px 40px;
   text-align: center;
   h2 {
     color: $secondary;
@@ -220,6 +220,14 @@
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
     // background-color: $primary;
+    .inside-inside-bar {
+      position: absolute;
+      background-color: $primary;
+      width: 6px;
+      height: 100%;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
   }
   p {
     position: absolute;
@@ -242,10 +250,8 @@
 
 .flecha-percentage {
   position: absolute;
-  display: flex;
-  justify-content: center;
   top: 50px;
-  overflow: visible;
+  transition: all 1.5s;
 
   img {
     width: 15px;

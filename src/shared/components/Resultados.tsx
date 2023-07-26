@@ -1,12 +1,8 @@
-import { SetStateAction, useState } from "react";
+interface ResultadosProps {
+  percentage: number;
+}
 
-const Resultados = () => {
-  const [percentage, setPercentage] = useState<number>(0);
-
-  const handlePercentageChange = (newPercentage: SetStateAction<number>) => {
-    setPercentage(newPercentage);
-  };
-
+const Resultados = ({ percentage }: ResultadosProps) => {
   return (
     <div className="resultados-div">
       <h2>
@@ -17,14 +13,15 @@ const Resultados = () => {
         <p className="hundred">100%</p>
         <div
           style={{
-            width: `${percentage !== 0 ? percentage : 2}%`,
-            transition: "width 1.5s",
+            width: `${percentage !== 1 ? percentage : 2.5}%`,
+            transition: "all 1s",
           }}
-          className={`inside-bar ${percentage !== 0 ? "bg-primary" : ""}`}
+          className={`inside-bar ${percentage !== 1 ? "bg-primary" : ""}`}
         >
+          <div className="inside-inside-bar"></div>
           <div
             className={`flecha-percentage ${
-              percentage === 0 ? "left-[-6px]" : "right-[-6px]"
+              percentage === 1 ? "right-0" : "right-[-6px]"
             }`}
           >
             <img src="/images/flecha.png" alt="flecha" />
@@ -32,12 +29,6 @@ const Resultados = () => {
           </div>
         </div>
       </div>
-      <button
-        className="reservar-button"
-        onClick={() => handlePercentageChange(88)}
-      >
-        Change Width
-      </button>
       <p className="information-result">
         <span>Información general de resultados:</span> Lorem ipsum dolor sit
         amet consectetur adipisicing elit. Quod, provident esse vero doloremque,

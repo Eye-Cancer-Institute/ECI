@@ -4,7 +4,6 @@ import "./mainPage.styles.scss";
 import Body from "./Body";
 import Footer from "./Footer";
 import Cuestionario from "./Cuestionario";
-import Resultados from "./Resultados";
 
 const MainPage = () => {
   return (
@@ -12,7 +11,6 @@ const MainPage = () => {
       <Header />
       <Body />
       <Cuestionario />
-      <Resultados />
       <Footer />
     </div>
   );
