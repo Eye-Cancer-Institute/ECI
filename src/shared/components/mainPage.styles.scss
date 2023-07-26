@@ -39,6 +39,20 @@
   height: auto;
 }
 
+//Social media icons
+.icons-button-div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  img {
+    width: 12px;
+    height: auto;
+  }
+  .lk-icon {
+    margin-right: 5px;
+  }
+}
+
 .reservar-button {
   background-color: $primary;
   color: white;
@@ -94,7 +108,7 @@
 //Cuestionario file
 .cuestionario-div {
   background-color: $tertiary;
-  margin-bottom: 60px;
+  padding-bottom: 80px;
   table {
     width: 638px;
     margin: 0 auto;
@@ -113,6 +127,7 @@
   td {
     font-weight: 600;
     padding: 10px;
+    color: $secondary;
 
     //Styles for table border radius
     border-style: none solid solid none;
@@ -135,10 +150,7 @@
   .no-label {
     margin-right: 5px;
     cursor: pointer;
-  }
-
-  .si-checkbox {
-    // margin-right: 15px;
+    color: $secondary;
   }
 
   .no-label {
@@ -180,13 +192,87 @@
   //End of styles for table border radius
 }
 
+//Resultados file
+.resultados-div {
+  margin: 40px 40px 0px 40px;
+  text-align: center;
+  h2 {
+    color: $secondary;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  span {
+    color: $primary;
+  }
+}
+
+.bar {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  border: solid 2px $primary;
+  border-radius: 10px;
+  .inside-bar {
+    position: relative;
+    height: 100%;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    // background-color: $primary;
+    .inside-inside-bar {
+      position: absolute;
+      background-color: $primary;
+      width: 6px;
+      height: 100%;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+  }
+  p {
+    position: absolute;
+    top: 5px;
+    font-weight: bold;
+  }
+  .zero {
+    left: 10px;
+    z-index: 1;
+  }
+  .hundred {
+    right: 10px;
+    z-index: 1;
+  }
+}
+
+.information-result {
+  margin-top: 100px;
+}
+
+.flecha-percentage {
+  position: absolute;
+  top: 50px;
+  transition: all 1.5s;
+
+  img {
+    width: 15px;
+    margin-bottom: 20px;
+    overflow: visible;
+  }
+}
+
+.percentage {
+  color: $primary;
+  font-weight: bold;
+  font-size: 44px;
+}
+
 //Footer file
 .footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: $secondary;
-  padding-top: 20px;
+  padding-top: 40px;
   padding-bottom: 20px;
   div {
     margin-bottom: 20px;
@@ -202,5 +288,15 @@
     &:hover {
       background-color: #f89e4c;
     }
+  }
+}
+
+.footer-icons-div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  img {
+    width: 12px;
+    height: auto;
   }
 }

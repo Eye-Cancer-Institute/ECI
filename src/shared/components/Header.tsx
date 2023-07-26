@@ -27,9 +27,18 @@ const Header = () => {
         </a>
       </div>
       <a href="https://www.eyecancerinstitute.com/">
-        <img className="logo-img" src="/logo.png" alt="Logo" />
+        <img className="logo-img" src="/images/logo.png" alt="Logo" />
       </a>
-      <div>
+      <div className="icons-button-div">
+        <a href="https://www.eyecancerinstitute.com/">
+          <img src="/images/fb.png" alt="fb-icon" />
+        </a>
+        <a href="https://www.eyecancerinstitute.com/">
+          <img src="/images/ig.png" alt="ig-icon" />
+        </a>
+        <a href="https://www.eyecancerinstitute.com/">
+          <img src="/images/lk.png" alt="lk-icon" className="lk-icon" />
+        </a>
         <a href="https://wa.me/528128608714">
           <Button className="reservar-button">Reservar una cita</Button>
         </a>

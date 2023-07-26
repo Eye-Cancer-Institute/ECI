@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import Checkbox from "./reusable/CustomCheckbox/Checkbox";
+import Resultados from "./Resultados";
 
 const Cuestionario = () => {
   const [checkboxStates, setCheckboxStates] = useState<{
@@ -12,6 +13,35 @@ const Cuestionario = () => {
     tr5: false,
     tr6: false,
   });
+
+  // Calculate the percentage based on checkboxStates
+  const calculatePercentage = () => {
+    const trueValuesCount = Object.values(checkboxStates).reduce(
+      (count, value) => (value ? count + 1 : count),
+      0
+    );
+
+    if (trueValuesCount === 0) {
+      return 1;
+    } else if (trueValuesCount === 1) {
+      return 11;
+    } else if (trueValuesCount === 2) {
+      return 22;
+    } else if (trueValuesCount === 3) {
+      return 34;
+    } else if (trueValuesCount === 4) {
+      return 51;
+    } else if (trueValuesCount === 5) {
+      return 55;
+    } else if (trueValuesCount === 6) {
+      return 100;
+    } else {
+      // Handle other cases if needed
+      return 1;
+    }
+  };
+
+  const [percentage, setPercentage] = useState<number>(calculatePercentage());
 
   const handleCheckboxChange = (
     checkboxId: string,
@@ -27,6 +57,12 @@ const Cuestionario = () => {
       [checkboxId]: !currentValue,
     }));
   };
+
+  // Update the percentage whenever checkboxStates changes
+  useEffect(() => {
+    const calculatedPercentage = calculatePercentage();
+    setPercentage(calculatedPercentage);
+  }, [checkboxStates]);
 
   return (
     <div className="cuestionario-div">
@@ -245,6 +281,7 @@ const Cuestionario = () => {
           </tr>
         </tbody>
       </table>
+      <Resultados percentage={percentage} />
     </div>
   );
 };
