@@ -5,7 +5,7 @@
 
 .main-div {
   width: 720px;
-  border: 1px solid $primary;
+  // border: 1px solid $primary;
   margin: 0 auto;
 }
 
@@ -104,11 +104,30 @@
   border-radius: 10px;
   padding: 5px;
 }
+.instrucciones {
+  margin-top: 40px;
+  span {
+    color: $primary;
+    font-weight: bold;
+  }
+  ul {
+    text-align: start;
+    list-style: disc;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 5px;
+  }
+}
 
 //Cuestionario file
 .cuestionario-div {
   background-color: $tertiary;
   padding-bottom: 80px;
+
+  span {
+    font-weight: bold;
+  }
   table {
     width: 638px;
     margin: 0 auto;
@@ -119,13 +138,13 @@
   .head-row {
     background-color: $primary;
   }
+
   th {
     color: white;
     padding: 10px;
   }
 
   td {
-    font-weight: 600;
     padding: 10px;
     color: $secondary;
 
@@ -144,6 +163,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 117px;
   }
 
   .si-label,
@@ -219,7 +239,6 @@
     border-bottom-right-radius: 4px;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
-    // background-color: $primary;
     .inside-inside-bar {
       position: absolute;
       background-color: $primary;
@@ -250,8 +269,10 @@
 
 .flecha-percentage {
   position: absolute;
+  display: flex;
   top: 50px;
   transition: all 1.5s;
+  justify-content: center;
 
   img {
     width: 15px;
@@ -264,6 +285,18 @@
   color: $primary;
   font-weight: bold;
   font-size: 44px;
+}
+
+.fuente {
+  margin-top: 40px;
+  span {
+    color: black;
+    font-weight: 400;
+  }
+  a {
+    color: $primary;
+    border-bottom: solid 1px $primary;
+  }
 }
 
 //Footer file
