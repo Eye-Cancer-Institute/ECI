@@ -69,15 +69,20 @@ const Cuestionario = () => {
       <table>
         <thead>
           <tr className="head-row">
-            <th>Argumento</th>
-            <th>Argumento</th>
-            <th>Resultado</th>
+            <th>Características</th>
+            <th>Observaciones</th>
+            <th>Resultados</th>
           </tr>
         </thead>
         <tbody>
           <tr id="tr1">
-            <td>Argumento 1</td>
-            <td>Argumento 1</td>
+            <td>
+              <span>T</span> (Thickness/Grosor)
+            </td>
+            <td>
+              Observe el <span>ultrasonido.</span> ¿Observa usted un grosor
+              mayor a 2mm?
+            </td>
             <td className="checkboxes-td">
               <label
                 className="si-label"
@@ -110,8 +115,13 @@ const Cuestionario = () => {
             </td>
           </tr>
           <tr id="tr2">
-            <td>Argumento 2</td>
-            <td>Argumento 2</td>
+            <td>
+              <span>F</span> (Fluid/Presencia de líquido)
+            </td>
+            <td>
+              Observe el <span>OCT</span> macular y sobre la lesión. ¿Observa
+              líquido subretiniano o desprendimiento seroso de retina?
+            </td>
             <td className="checkboxes-td">
               <label
                 className="si-label"
@@ -144,8 +154,13 @@ const Cuestionario = () => {
             </td>
           </tr>
           <tr id="tr3">
-            <td>Argumento 3</td>
-            <td>Argumento 3</td>
+            <td>
+              <span>S</span> (Symptoms/Síntomas)
+            </td>
+            <td>
+              Use la <span>Cartilla de Snellen.</span> ¿Su paciente tiene una
+              visión de 20/60 o peor? ¿Presenta metamorfopsias?
+            </td>
             <td className="checkboxes-td">
               <label
                 className="si-label"
@@ -178,8 +193,13 @@ const Cuestionario = () => {
             </td>
           </tr>
           <tr id="tr4">
-            <td>Argumento 4</td>
-            <td>Argumento 4</td>
+            <td>
+              <span>O</span> (Orange pigment/Pigmento naranja)
+            </td>
+            <td>
+              Observe la <span>autofluorescencia.</span> ¿Observa usted moteado
+              hiper-autofluorescente?
+            </td>
             <td className="checkboxes-td">
               <label
                 className="si-label"
@@ -212,8 +232,13 @@ const Cuestionario = () => {
             </td>
           </tr>
           <tr id="tr5">
-            <td>Argumento 5</td>
-            <td>Argumento 5</td>
+            <td>
+              <span>M</span> (Melanoma hollow/Hipoecogenicidad)
+            </td>
+            <td>
+              Observe el <span>ultrasonido.</span> ¿La lesión tiene un centro
+              hipo-ecogénico?
+            </td>
             <td className="checkboxes-td">
               <label
                 className="si-label"
@@ -246,8 +271,13 @@ const Cuestionario = () => {
             </td>
           </tr>
           <tr id="tr6">
-            <td>Argumento 6</td>
-            <td>Argumento 6</td>
+            <td>
+              <span>DiM</span> (Diameter/Diámetro)
+            </td>
+            <td>
+              Observe la <span>fotografía de fondo de ojo.</span> ¿La lesión
+              mide más de 2 diámetros de disco o 5mm?
+            </td>
             <td className="checkboxes-td">
               <label
                 className="si-label"
