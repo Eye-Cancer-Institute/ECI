@@ -111,12 +111,12 @@
     font-weight: bold;
   }
   ul {
-    text-align: flex-start;
     list-style: disc;
     padding-left: 20px;
   }
   li {
     margin-bottom: 5px;
+    text-align: start;
   }
 }
 
