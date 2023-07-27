@@ -6,13 +6,13 @@ const Footer = () => {
     <div className="footer">
       <div className="footer-icons-div">
         <a href="https://www.facebook.com/eyecancerinst">
-          <img src="/images/fb.png" alt="fb-icon" />
+          <img src="/images/fb_white.png" alt="fb-icon" />
         </a>
         <a href="https://www.instagram.com/eyecancerinstitute">
-          <img src="/images/ig.png" alt="ig-icon" />
+          <img src="/images/ig_white.png" alt="ig-icon" />
         </a>
         <a href="https://www.linkedin.com/company/eyecancerinstitute">
-          <img src="/images/lk.png" alt="lk-icon" className="lk-icon" />
+          <img src="/images/lk_white.png" alt="lk-icon" className="lk-icon" />
         </a>
       </div>
       <div>
