@@ -30,7 +30,7 @@ const Footer = () => {
         >
           Aviso de privacidad
         </a>
-        <p>Fundación Ovularis S.C. </p>
+        <p>Fundación Ocularis S.C. </p>
       </div>
     </div>
   );

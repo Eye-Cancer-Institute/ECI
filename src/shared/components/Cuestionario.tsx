@@ -287,14 +287,19 @@ const Cuestionario = () => {
           </tr>
         </tbody>
       </table>
-      <div className="reiniciar-div">
-        <p>Reiniciar: </p>
-        <img
-          src="/images/rel.png"
-          alt="rel-icon"
-          className="rel-icon"
-          onClick={() => setCheckboxStates(initialCheckboxStates)}
-        />
+      <div className="estimacion-div">
+        <h2>
+          Estimación de <span>riesgo</span> de crecimiento a 5 años:
+        </h2>
+        <div className="reiniciar-div">
+          <p>Reiniciar: </p>
+          <img
+            src="/images/rel.png"
+            alt="rel-icon"
+            className="rel-icon"
+            onClick={() => setCheckboxStates(initialCheckboxStates)}
+          />
+        </div>
       </div>
 
       <Resultados percentage={percentage} />

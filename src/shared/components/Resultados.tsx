@@ -5,9 +5,6 @@ interface ResultadosProps {
 const Resultados = ({ percentage }: ResultadosProps) => {
   return (
     <div className="resultados-div">
-      <h2>
-        Estimación de <span>riesgo</span> de crecimiento a 5 años:
-      </h2>
       <div className="bar">
         <p className="zero">0%</p>
         <p className="hundred">100%</p>
@@ -31,26 +28,28 @@ const Resultados = ({ percentage }: ResultadosProps) => {
       </div>
       {percentage < 23 && (
         <p className="information-result">
-          <span>Información general de resultados:</span> El resultado muestra
-          que el paciente tiene un factor de riesgo bajo. Recomendamos repetir
-          la revisión completa en 4 meses.
+          El resultado muestra que el paciente tiene un factor de{" "}
+          <span>riesgo bajo</span>. Recomendamos repetir la revisión completa en{" "}
+          <span>4 meses</span>.
         </p>
       )}
       {percentage === 34 && (
         <p className="information-result">
-          <span>Información general de resultados:</span> El resultado muestra
-          que el paciente tiene un factor de riesgo medio. Recomendamos evaluar
-          el referir al paciente con un especialista en oncología ocular para
-          continuar con la valoración y el diagnóstico; o, realizar una segunda
-          evaluación en 2 meses.
+          El resultado muestra que el paciente tiene un factor de{" "}
+          <span>riesgo medio</span>. Recomendamos <span>evaluar</span> el
+          referir al paciente con un{" "}
+          <span>especialista en oncología ocular</span> para continuar con la
+          valoración y el diagnóstico; o, realizar una segunda evaluación en{" "}
+          <span>2 meses</span>.
         </p>
       )}
       {percentage > 50 && (
         <p className="information-result">
-          <span>Información general de resultados:</span> El resultado muestra
-          que el paciente tiene un factor de riesgo alto. Recomendamos referir
-          al paciente <span>inmediatamente</span> con un especialista en
-          oncología ocular para continuar con la valoración y el diagnóstico.
+          El resultado muestra que el paciente tiene un factor de{" "}
+          <span>riesgo alto</span>. Recomendamos referir al paciente{" "}
+          <span>inmediatamente</span> con un
+          <span> especialista en oncología ocular</span> para continuar con la
+          valoración y el diagnóstico.
         </p>
       )}
 
