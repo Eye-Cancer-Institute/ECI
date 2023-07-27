@@ -212,6 +212,21 @@
   //End of styles for table border radius
 }
 
+.reiniciar-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 50px;
+  p {
+    font-weight: bold;
+  }
+  img {
+    width: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}
+
 //Resultados file
 .resultados-div {
   margin: 40px 40px 0px 40px;

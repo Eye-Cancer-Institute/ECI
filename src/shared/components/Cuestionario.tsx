@@ -5,14 +5,18 @@ import { BooleanObject } from "shared/types/mainPage.types";
 import { calculatePercentage } from "shared/helpers/mainPage.helpers";
 
 const Cuestionario = () => {
-  const [checkboxStates, setCheckboxStates] = useState<BooleanObject>({
+  const initialCheckboxStates = {
     tr1: false,
     tr2: false,
     tr3: false,
     tr4: false,
     tr5: false,
     tr6: false,
-  });
+  };
+
+  const [checkboxStates, setCheckboxStates] = useState<BooleanObject>(
+    initialCheckboxStates
+  );
   const [percentage, setPercentage] = useState<number>(1);
 
   const handleCheckboxChange = (
@@ -283,6 +287,16 @@ const Cuestionario = () => {
           </tr>
         </tbody>
       </table>
+      <div className="reiniciar-div">
+        <p>Reiniciar: </p>
+        <img
+          src="/images/rel.png"
+          alt="rel-icon"
+          className="rel-icon"
+          onClick={() => setCheckboxStates(initialCheckboxStates)}
+        />
+      </div>
+
       <Resultados percentage={percentage} />
     </div>
   );
