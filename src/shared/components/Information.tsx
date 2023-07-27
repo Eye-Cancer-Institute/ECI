@@ -27,7 +27,7 @@ const Information = () => {
         </span>{" "}
         (el resultado generado no es un diagnóstico final). Se recomienda
         utilizarla como auxiliar en el proceso de revisión y observación
-        ofotálmica del paciente.
+        oftálmica del paciente.
       </p>
       <div className="instrucciones">
         <p>
