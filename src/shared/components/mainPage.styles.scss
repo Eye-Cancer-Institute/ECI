@@ -95,7 +95,7 @@
       font-weight: bold;
     }
     &:last-of-type {
-      margin-bottom: 20px;
+      margin-bottom: 0px;
     }
   }
 }
@@ -121,6 +121,14 @@
     text-align: start;
     color: $secondary;
     text-decoration: underline;
+  }
+}
+.bullets-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    width: 250px;
   }
 }
 
@@ -289,11 +297,38 @@
     right: 10px;
     z-index: 1;
   }
+  .alto-riesgo {
+    top: 8px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    p {
+      // position: absolute;
+      color: $primary;
+      font-size: 22px;
+      &:last-of-type {
+        top: 28px;
+      }
+    }
+  }
 }
 
 .information-result {
   margin-top: 100px;
   text-align: justify;
+}
+
+.button-referir-div {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  font-size: 15px;
+  a {
+    color: $primary;
+    border-bottom: solid 1px #f78721;
+  }
 }
 
 .flecha-percentage {
@@ -318,8 +353,8 @@
 
 .fuente {
   margin-top: 40px;
-  text-align: center;
-  font-size: 12px;
+  text-align: justify;
+  font-size: 11px;
   span {
     color: black;
     font-weight: 400;

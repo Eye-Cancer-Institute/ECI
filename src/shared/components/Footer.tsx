@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "shadcn/components/ui/button";
 
 const Footer = () => {
@@ -21,7 +20,9 @@ const Footer = () => {
         </p>
       </div>
       <div>
-        <Button>¡Contáctanos!</Button>
+        <a href="https://wa.me/528128608714">
+          <Button>¡Contáctanos!</Button>
+        </a>
       </div>
       <div className="flex flex-col items-center text-xs">
         <a
