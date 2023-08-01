@@ -1,24 +1,19 @@
-import React from "react";
-
 const Information = () => {
   return (
     <div className="information">
       <div className="main-title-div">
-        <h1>
-          Mmy <span>App</span>
-        </h1>
+        <span>Mmy App</span>
       </div>
 
       <p className="descripcion">
         <span>Mmy App</span> es una{" "}
-        <span>aplicación enfocada en orientar al oftalmólogo actual</span>. Esta
-        permite evaluar lesiones pigmentadas del fondo del ojo rápida y
-        convenientemente. Tiene la finalidad de{" "}
         <span>
-          detectar lesiones en riesgo de transformación maligna para su
-          referencia temprana
+          aplicación enfocada en orientar al oftalmólogo actual en la detección
+          temprana de melanoma coroideo
         </span>
-        .
+        . Esta permite evaluar lesiones pigmentadas del fondo del ojo rápida y
+        convenientemente. Tiene la finalidad de detectar lesiones en riesgo de
+        transformación maligna para su <span>referencia temprana</span>.
       </p>
       <p className="disclaimer">
         Importante: Esta aplicación fue diseñada para utilizarse{" "}
@@ -35,12 +30,15 @@ const Information = () => {
           evaluarse al paciente y{" "}
           <span>solicitarle los estudios necesarios</span>, que incluyen:
         </p>
-        <ul>
-          <li>Fotografía de fondo de ojo.</li>
-          <li>Autofluorescencia.</li>
-          <li>OCT macular y sobre la lesión.</li>
-          <li>Ultrasonido modo B.</li>
-        </ul>
+        <div className="bullets-div">
+          <ul>
+            <li>Fotografía de fondo de ojo.</li>
+            <li>Autofluorescencia.</li>
+            <li>OCT macular y sobre la lesión.</li>
+            <li>Ultrasonido modo B.</li>
+          </ul>
+          <img src="/images/list.png" alt="Lista" />
+        </div>
       </div>
       <p className="mt-5">
         Una vez se tengan los resultados de los estudios del paciente, puede
