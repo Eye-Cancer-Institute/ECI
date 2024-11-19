@@ -21,11 +21,21 @@ const Cuestionario = (props: any) => {
           ...prevState,
           tr1: true
         }));
+      } else {
+        setCheckboxStates((prevState) => ({
+          ...prevState,
+          tr1: false
+        }));
       }
       if(props.data.echogenicity === "Hipo-ecogénico"){
         setCheckboxStates((prevState) => ({
           ...prevState,
           tr5: true
+        }));
+      } else {
+        setCheckboxStates((prevState) => ({
+          ...prevState,
+          tr5: false
         }));
       }
     }
