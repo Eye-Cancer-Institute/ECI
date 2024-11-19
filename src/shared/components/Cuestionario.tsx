@@ -4,7 +4,7 @@ import Resultados from "./Resultados";
 import { BooleanObject } from "shared/types/mainPage.types";
 import { calculatePercentage } from "shared/helpers/mainPage.helpers";
 
-const Cuestionario = () => {
+const Cuestionario = (props: any) => {
   const initialCheckboxStates = {
     tr1: false,
     tr2: false,
@@ -13,6 +13,23 @@ const Cuestionario = () => {
     tr5: false,
     tr6: false,
   };
+
+  useEffect(() => {
+    if(props.data){
+      if(props.data.width > 2){
+        setCheckboxStates((prevState) => ({
+          ...prevState,
+          tr1: true
+        }));
+      }
+      if(props.data.echogenicity === "Hipo-ecogénico"){
+        setCheckboxStates((prevState) => ({
+          ...prevState,
+          tr5: true
+        }));
+      }
+    }
+  }, [props.data]);
 
   const [checkboxStates, setCheckboxStates] = useState<BooleanObject>(
     initialCheckboxStates

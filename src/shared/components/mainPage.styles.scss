@@ -399,3 +399,37 @@
     height: auto;
   }
 }
+
+.ai-button {
+  background-color: $primary;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 40px;
+  margin: 0 20px;
+  &:hover {
+    background-color: $primary-hover;
+  }
+}
+
+.results-button {
+  background-color: white;
+  color: $primary;
+  border-radius: 20px;
+  padding: 10px 40px;
+  border-style: solid;
+  border-color: $primary;
+  border-width: 1px;
+  margin: 0 20px;
+  &:hover {
+    background-color: $primary;
+    color: white;
+  }
+}
+
+.confirm-button {
+  background-color: $primary;
+  color: white;
+  &:hover {
+    background-color: $primary-hover;
+  }
+}
