@@ -7,7 +7,7 @@ import Cuestionario from "./Cuestionario";
 import AIHelper from "./AIHelper";
 
 const MainPage = () => {
-  const [aiData, setAiData] = useState<any>();
+  const [aiData, setAiData] = useState<any>(undefined);
   const handleData = useCallback((data: any) => {
     setAiData(data);
   }, []);

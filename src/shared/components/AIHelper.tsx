@@ -7,16 +7,21 @@ import { InboxOutlined } from '@ant-design/icons';
 import ConfirmModal from './ConfirmModal';
 import type { UploadProps } from 'antd';
 import ErrorModal from "./ErrorModal";
+import ImageModal from "./ImageModal";
 
 const { Dragger } = Upload;
 
 const AIHelper = (props: any) => {
   const [file, setFile] = useState<File | null>(null)
   const [loading, setLoading] = useState(false)
+  const [images, setImages] = useState<any>()
   const [melanoma, setMelanoma] = useState<any>()
-  const [showModal, setShowModal] = useState(false)
+  const [showImageModal, setShowImageModal] = useState(false)
+  const [showConfirmModal, setShowConfirmModal] = useState(false)
+  const [disableButton, setDisableButton] = useState(false)
 
   const handleUpload = async () => {
+    setDisableButton(true)
     if (!file) return;
     setLoading(true);
     const storageRef = ref(storage, `pdfs/${Date.now()}.pdf`);
@@ -25,7 +30,7 @@ const AIHelper = (props: any) => {
     const body = {
       link: url,
     }
-    const link: any = process.env.REACT_APP_API_URL;
+    const link: any = process.env.REACT_APP_RECEIVE_PDF;
     try {
       const response = await fetch(link, {
         method: 'POST',
@@ -35,13 +40,36 @@ const AIHelper = (props: any) => {
         body: JSON.stringify(body)
       })
       const data = await response.json()
-      setMelanoma(data)
-      props.handleData(data)
-      setShowModal(true)
+      setImages(data)
+      setShowImageModal(true)
     } catch {
       ErrorModal()
     }
     setLoading(false);
+    setDisableButton(false)
+  }
+
+  const getMelanoma = async (image: string) => {
+    setDisableButton(true)
+    setLoading(true)
+    const link: any = process.env.REACT_APP_RECEIVE_IMAGE;
+    try {
+      const response = await fetch(link, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ link: image })
+      })
+      const data = await response.json()
+      setMelanoma(data)
+      setShowConfirmModal(true)
+      props.handleData(data)
+    } catch {
+      ErrorModal()
+    }
+    setLoading(false)
+    setDisableButton(false)
   }
 
   const upload: UploadProps = {
@@ -55,15 +83,21 @@ const AIHelper = (props: any) => {
     maxCount: 1,
   };
 
-  const handleCancelModal = () => {
-    setShowModal(false)
+  const handleCancelImageModal = () => {
+    setShowImageModal(false)
+    setDisableButton(false)
+  }
+
+  const handleCancelConfirmModal = () => {
+    setShowConfirmModal(false)
+    setDisableButton(false)
   }
 
   return (
     <div className="information bg-tertiary">
       <div style={{ width: '100%' }}>
-        <h2 style={{ fontSize: '30px', fontWeight: '800', color: '#f78721', textAlign: 'center', padding: '0 0 15px' }}>Eye Uploader</h2>
-        <p>Eye Uploader es un sistema de detección, medición y clasificación de melanoma ocular impulsado por inteligencia artificial. Nuestra aplicación trabaja con el ultrasonido modo B para proporcionar el grosor y la ecogenicidad de la lesión.</p>
+        <h2 style={{ fontSize: '30px', fontWeight: '800', color: '#f78721', textAlign: 'center', padding: '0 0 15px' }}>Cop-Eye-Lot</h2>
+        <p>Cop-Eye-Lot es un sistema de detección, medición y clasificación de melanoma ocular impulsado por inteligencia artificial. Nuestra aplicación trabaja con el ultrasonido modo B para proporcionar el grosor y la ecogenicidad de la lesión.</p>
         <p>Esta plataforma sigue en desarrollo, por lo que debe ser tomada como un complemento y no como un diagnóstico final.</p>
         <p>A continuación sube tu archivo PDF para saber los resultados del modelo</p>
         <Dragger {...upload} style={{ margin: '10px 0' }}>
@@ -71,11 +105,11 @@ const AIHelper = (props: any) => {
           <p className="ant-upload-text">Haz clic o arrastra el archivo a esta área para subirlo</p>
         </Dragger>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '10px' }}>
-          <button className="ai-button" onClick={handleUpload} style={{ alignSelf: 'center' }}>
+          <button className="ai-button" onClick={handleUpload} style={{ alignSelf: 'center' }} disabled={disableButton}>
             Subir archivo
           </button>
           {melanoma ?
-            <button className="results-button" onClick={() => setShowModal(true)} style={{ alignSelf: 'center' }}>
+            <button className="results-button" onClick={() => setShowConfirmModal(true)} style={{ alignSelf: 'center' }}>
               Últimos Resultados
             </button>
             : null
@@ -91,7 +125,8 @@ const AIHelper = (props: any) => {
           />
         </div>
         <div>
-          <ConfirmModal melanoma={melanoma} showModal={showModal} handleCancelModal={handleCancelModal} />
+          <ImageModal images={images ? images : []} showModal={showImageModal} handleCancelModal={handleCancelImageModal} getMelanoma={getMelanoma}/>
+          <ConfirmModal melanoma={melanoma} showModal={showConfirmModal} handleCancelModal={handleCancelConfirmModal} />
         </div>
       </div>
     </div>

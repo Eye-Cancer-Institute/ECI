@@ -14,6 +14,19 @@ const Cuestionario = (props: any) => {
     tr6: false,
   };
 
+  const [checkboxStates, setCheckboxStates] = useState<BooleanObject>(initialCheckboxStates);
+  const [results, setResults] = useState<any>(undefined);
+
+  useEffect(() => {
+    if (props.data) {
+      const completeResults = {
+        ...props.data,
+        checkboxes: checkboxStates,
+      };
+      setResults(completeResults);
+    }
+  }, [checkboxStates, props.data]);
+
   useEffect(() => {
     if(props.data){
       if(props.data.width > 2){
@@ -41,9 +54,6 @@ const Cuestionario = (props: any) => {
     }
   }, [props.data]);
 
-  const [checkboxStates, setCheckboxStates] = useState<BooleanObject>(
-    initialCheckboxStates
-  );
   const [percentage, setPercentage] = useState<number>(1);
 
   const handleCheckboxChange = (
@@ -329,7 +339,7 @@ const Cuestionario = (props: any) => {
         </div>
       </div>
 
-      <Resultados percentage={percentage} />
+      <Resultados percentage={percentage} aiResults={results} />
     </div>
   );
 };

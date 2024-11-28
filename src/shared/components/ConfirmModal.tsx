@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Button, Image, Modal } from 'antd';
-import { generateFromUrl } from "docs/generateDoc";
 
 const ConfirmModal = (props: any) => {
     const [open, setOpen] = useState(false);
@@ -31,9 +30,6 @@ const ConfirmModal = (props: any) => {
                 footer={[
                     <Button key="submit" onClick={handleOk} className="confirm-button">
                         Confirmar
-                    </Button>,
-                    <Button onClick={() => generateFromUrl(props.melanoma)} className="confirm-button">
-                        Descargar resultados
                     </Button>,
                 ]}
             >
