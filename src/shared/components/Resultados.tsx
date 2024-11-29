@@ -1,8 +1,11 @@
+import { generateFromUrl } from "docs/generateDoc";
+
 interface ResultadosProps {
   percentage: number;
+  aiResults: any;
 }
 
-const Resultados = ({ percentage }: ResultadosProps) => {
+const Resultados = ({ percentage, aiResults }: ResultadosProps) => {
   return (
     <div className="resultados-div">
       <div className="bar">
@@ -17,9 +20,9 @@ const Resultados = ({ percentage }: ResultadosProps) => {
         >
           <div className="inside-inside-bar"></div>
           <div
-            className={`flecha-percentage  ${
+            className={`flecha-percentage ${
               percentage === 1 ? "right-0" : "right-[-6px]"
-            } ${percentage === 100 ? "right-[6px]" : ""}`}
+              } ${percentage === 100 ? "right-[6px]" : ""}`}
           >
             <img src="/images/flecha.png" alt="flecha" />
             {percentage !== 100 ? (
@@ -33,38 +36,46 @@ const Resultados = ({ percentage }: ResultadosProps) => {
           </div>
         </div>
       </div>
-      {percentage < 23 && (
-        <p className="information-result">
-          El resultado muestra que el paciente tiene un factor de{" "}
-          <span>riesgo bajo</span>. Recomendamos repetir la revisión completa en{" "}
-          <span>4 meses</span>.
-        </p>
-      )}
-      {percentage === 34 && (
-        <p className="information-result">
-          El resultado muestra que el paciente tiene un factor de{" "}
-          <span>riesgo medio</span>. Recomendamos <span>evaluar</span> el
-          referir al paciente con un{" "}
-          <span>especialista en oncología ocular</span> para continuar con la
-          valoración y el diagnóstico; o, realizar una segunda evaluación en{" "}
-          <span>2 meses</span>.
-        </p>
-      )}
-      {percentage > 50 && (
-        <p className="information-result">
-          El resultado muestra que el paciente tiene un factor de{" "}
-          <span>riesgo alto</span>. Recomendamos referir al paciente{" "}
-          <span>inmediatamente</span> con un
-          <span> especialista en oncología ocular</span> para continuar con la
-          valoración y el diagnóstico.
-        </p>
-      )}
-      <div className="button-referir-div">
-        <p>
-          Para referir directamente al paciente con el especialista en oncología
-          ocular, haga clic <a href="https://wa.me/528128608714">aquí</a>.
-        </p>
+      <div className="information-result">
+        {percentage < 23 && (
+          <p>
+            El resultado muestra que el paciente tiene un factor de{" "}
+            <span>riesgo bajo</span>. Recomendamos repetir la revisión completa en{" "}
+            <span>4 meses</span>.
+          </p>
+        )}
+        {percentage === 34 && (
+          <p>
+            El resultado muestra que el paciente tiene un factor de{" "}
+            <span>riesgo medio</span>. Recomendamos evaluar el
+            referir al paciente con un especialista en oncología ocular para continuar con la
+            valoración y el diagnóstico; o, realizar una segunda evaluación en{" "}
+            <span>2 meses</span>.
+          </p>
+        )}
+        {percentage > 50 && (
+          <p>
+            El resultado muestra que el paciente tiene un factor de{" "}
+            <span>riesgo alto</span>. Recomendamos referir al paciente{" "}
+            <span>inmediatamente</span> con un
+            especialista en oncología ocular para continuar con la
+            valoración y el diagnóstico.
+          </p>
+        )}
+        <div className="button-referir-div">
+          <p>
+            Para referir directamente al paciente con el especialista en oncología
+            ocular, haga clic <a href="https://wa.me/528128608714">aquí</a>.
+          </p>
+        </div>
       </div>
+      {aiResults ?
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px' }}>
+          <button onClick={() => generateFromUrl({percentage: percentage, ...aiResults})} className='ai-button'>
+            Descargar resultados
+          </button>
+        </div> : null
+      }
 
       <p className="fuente">
         {" "}

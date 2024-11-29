@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import Header from "./Header";
 import "./mainPage.styles.scss";
 import Body from "./Body";
 import Footer from "./Footer";
 import Cuestionario from "./Cuestionario";
+import AIHelper from "./AIHelper";
 
 const MainPage = () => {
+  const [aiData, setAiData] = useState<any>(undefined);
+  const handleData = useCallback((data: any) => {
+    setAiData(data);
+  }, []);
+
   return (
     <div className="main-div">
       <Header />
       <Body />
-      <Cuestionario />
+      <AIHelper handleData={handleData}/>
+      <Cuestionario data={aiData}/>
       <Footer />
     </div>
   );
