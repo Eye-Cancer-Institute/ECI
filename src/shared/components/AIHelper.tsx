@@ -81,6 +81,7 @@ const AIHelper = (props: any) => {
       return false;
     },
     maxCount: 1,
+    accept: '.pdf'
   };
 
   const handleCancelImageModal = () => {
